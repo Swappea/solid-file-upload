@@ -1,26 +1,66 @@
-import { Accessor, Component, createComputed, createSignal } from "solid-js";
+import {
+  FileUploadRoot,
+  FileUploadLabel,
+  FileUploadDropZone,
+  FileUploadHiddenInput,
+  FileUploadItem,
+  FileUploadItemDeleteTrigger,
+  FileUploadItemGroup,
+  FileUploadItemName,
+  FileUploadItemPreview,
+  FileUploadItemPreviewImage,
+  FileUploadItemSize,
+  FileUploadTrigger,
+} from "./components";
 
-export function createHello(): [Accessor<string>, (to: string) => void] {
-  const [hello, setHello] = createSignal("Hello World!");
+import type {
+  FileUploadRootProps,
+  FileUploadLabelProps,
+  FileUploadDropZoneProps,
+  FileUploadHiddenInputProps,
+  FileUploadItemProps,
+  FileUploadItemDeleteTriggerProps,
+  FileUploadItemGroupProps,
+  FileUploadItemNameProps,
+  FileUploadItemPreviewProps,
+  FileUploadItemPreviewImageProps,
+  FileUploadItemSizeProps,
+  FileUploadTriggerProps,
+} from "./components";
 
-  return [hello, (to: string) => setHello(`Hello ${to}!`)];
-}
+// all type exports
+export type {
+  FileUploadRootProps,
+  FileUploadLabelProps,
+  FileUploadDropZoneProps,
+  FileUploadHiddenInputProps,
+  FileUploadItemProps,
+  FileUploadItemDeleteTriggerProps,
+  FileUploadItemGroupProps,
+  FileUploadItemNameProps,
+  FileUploadItemPreviewProps,
+  FileUploadItemPreviewImageProps,
+  FileUploadItemSizeProps,
+  FileUploadTriggerProps,
+};
 
-export const Hello: Component<{ to?: string }> = props => {
-  const [hello, setHello] = createHello();
+import type { Accept, Details, FileError, FileRejection } from "./types";
 
-  // Console calls will be removed in production if `dropConsole` is enabled
-
-  // eslint-disable-next-line no-console
-  console.log("Hello World!");
-
-  createComputed(() => {
-    if (typeof props.to === "string") setHello(props.to);
-  });
-
-  return (
-    <>
-      <div>{hello()}</div>
-    </>
-  );
+export {
+  FileUploadRoot,
+  FileUploadLabel,
+  FileUploadDropZone,
+  FileUploadHiddenInput,
+  FileUploadItem,
+  FileUploadItemDeleteTrigger,
+  FileUploadItemGroup,
+  FileUploadItemName,
+  FileUploadItemPreview,
+  FileUploadItemPreviewImage,
+  FileUploadItemSize,
+  FileUploadTrigger,
+  Accept,
+  Details,
+  FileError,
+  FileRejection,
 };
