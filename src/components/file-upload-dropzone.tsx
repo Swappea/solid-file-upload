@@ -4,8 +4,8 @@ import { useFileUploadContext } from "../context";
 
 import { isDragEventWithFiles } from "../utils";
 
-export type FileUploadDropZoneProps = {
-  children: JSX.Element;
+export type FileUploadDropZoneProps = JSX.IntrinsicElements["div"] & {
+  children?: JSX.Element;
 };
 
 export const FileUploadDropZone = (props: FileUploadDropZoneProps) => {

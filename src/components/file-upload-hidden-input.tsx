@@ -2,8 +2,8 @@ import type { JSX } from "solid-js";
 
 import { useFileUploadContext } from "../context";
 
-export type FileUploadHiddenInputProps = {
-  children: JSX.Element;
+export type FileUploadHiddenInputProps = JSX.IntrinsicElements["input"] & {
+  children?: JSX.Element;
 };
 
 export const FileUploadHiddenInput = (props: FileUploadHiddenInputProps) => {
@@ -28,8 +28,6 @@ export const FileUploadHiddenInput = (props: FileUploadHiddenInputProps) => {
       style={{ display: "none" }}
       onChange={onInput}
       {...props}
-    >
-      {props.children}
-    </input>
+    />
   );
 };

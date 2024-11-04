@@ -2,10 +2,10 @@ import { splitProps, type JSX } from "solid-js";
 
 import { useFileUploadContext } from "../context";
 
-export interface FileUploadTriggerProps {
+export type FileUploadTriggerProps = JSX.IntrinsicElements["button"] & {
   children?: JSX.Element;
   onClick?: (event: MouseEvent) => void;
-}
+};
 
 export const FileUploadTrigger = (props: FileUploadTriggerProps) => {
   const context = useFileUploadContext();

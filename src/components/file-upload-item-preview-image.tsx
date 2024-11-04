@@ -2,7 +2,7 @@ import { type JSX, createEffect, createSignal, onCleanup } from "solid-js";
 
 import { useFileUploadItemContext } from "../context";
 
-export type FileUploadItemPreviewImageProps = {
+export type FileUploadItemPreviewImageProps = JSX.IntrinsicElements["img"] & {
   children?: JSX.Element;
 };
 

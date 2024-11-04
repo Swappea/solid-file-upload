@@ -2,8 +2,8 @@ import type { JSX } from "solid-js";
 
 import { useFileUploadItemContext, useFileUploadContext } from "../context";
 
-export type FileUploadItemDeleteTriggerProps = {
-  children: JSX.Element;
+export type FileUploadItemDeleteTriggerProps = JSX.IntrinsicElements["button"] & {
+  children?: JSX.Element;
 };
 
 export const FileUploadItemDeleteTrigger = (props: FileUploadItemDeleteTriggerProps) => {

@@ -28,6 +28,10 @@ import type {
   FileUploadTriggerProps,
 } from "./components";
 
+import { FileUploadRootContext } from "./context";
+
+export { FileUploadRootContext };
+
 // all type exports
 export type {
   FileUploadRootProps,

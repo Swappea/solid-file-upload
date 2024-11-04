@@ -2,8 +2,8 @@ import { type JSX, Show } from "solid-js";
 
 import { useFileUploadItemContext } from "../context";
 
-export type FileUploadItemPreviewProps = {
-  children: JSX.Element;
+export type FileUploadItemPreviewProps = JSX.IntrinsicElements["div"] & {
+  children?: JSX.Element;
   type?: string;
 };
 

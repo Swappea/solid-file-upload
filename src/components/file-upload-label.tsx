@@ -2,8 +2,8 @@ import type { JSX } from "solid-js";
 
 import { useFileUploadContext } from "../context";
 
-export type FileUploadLabelProps = {
-  children: JSX.Element;
+export type FileUploadLabelProps = JSX.IntrinsicElements["label"] & {
+  children?: JSX.Element;
 };
 
 export const FileUploadLabel = (props: FileUploadLabelProps) => {

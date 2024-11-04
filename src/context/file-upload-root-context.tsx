@@ -1,4 +1,4 @@
-import { type JSX, createContext, createUniqueId, useContext, mergeProps } from "solid-js";
+import { type JSX, createContext, createUniqueId, mergeProps, useContext } from "solid-js";
 import { createStore } from "solid-js/store";
 
 import { getFiles, parseAcceptedTypes } from "../utils";
@@ -23,7 +23,7 @@ export type FileUploadContextValue = {
   removeFile: (file: File) => void;
 };
 
-const FileUploadContext = createContext<FileUploadContextValue>();
+export const FileUploadContext = createContext<FileUploadContextValue>();
 
 export const FileUploadProvider = (props: FileUploadContextProviderProps) => {
   const inputId = createUniqueId();
@@ -116,9 +116,7 @@ export const useFileUploadContext = () => {
   const context = useContext(FileUploadContext);
 
   if (context === undefined) {
-    throw new Error(
-      "[kobalte]: `useFileUploadContext` must be used within a `FileUploadContext.Root` component",
-    );
+    throw new Error("`useFileUploadContext` must be used within a `FileUploadContext` component");
   }
 
   return context;

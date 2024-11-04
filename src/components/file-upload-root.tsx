@@ -4,8 +4,8 @@ import { FileUploadProvider } from "../context";
 
 import type { FileUploadRootOptions } from "../types";
 
-export type FileUploadRootProps = FileUploadRootOptions & {
-  children: JSX.Element;
+export type FileUploadRootProps = FileUploadRootOptions & JSX.IntrinsicElements["div"] & {
+  children?: JSX.Element;
 };
 
 /**

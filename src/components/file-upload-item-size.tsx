@@ -2,8 +2,8 @@ import type { JSX } from "solid-js";
 
 import { useFileUploadItemContext } from "../context";
 
-export type FileUploadItemSizeProps = {
-  children: JSX.Element;
+export type FileUploadItemSizeProps = JSX.IntrinsicElements["div"] & {
+  children?: JSX.Element;
   // number of decimal places to round to
   precision?: number;
   // ability to override the default formatSize function
