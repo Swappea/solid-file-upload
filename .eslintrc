@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "no-only-tests", "eslint-comments"],
+  "plugins": ["@typescript-eslint", "no-only-tests", "eslint-comments", "prefer-arrow"],
   "ignorePatterns": ["node_modules", "dist", "dev", "tsup.config.ts", "vitest.config.ts"],
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -9,7 +9,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "prefer-const": "warn",
+    "prefer-const": "error",
     "no-console": "warn",
     "no-debugger": "warn",
     "@typescript-eslint/no-unused-vars": [
@@ -24,6 +24,7 @@
     "@typescript-eslint/no-unnecessary-condition": "warn",
     "@typescript-eslint/no-useless-empty-export": "warn",
     "no-only-tests/no-only-tests": "warn",
-    "eslint-comments/no-unused-disable": "warn"
+    "eslint-comments/no-unused-disable": "warn",
+    "prefer-arrow/prefer-arrow-functions": ["error"]
   }
 }
