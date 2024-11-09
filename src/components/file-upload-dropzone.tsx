@@ -72,7 +72,7 @@ export const FileUploadDropZone = (props: FileUploadDropZoneProps) => {
         }
         const files = event.dataTransfer?.files;
         const fileList = Array.from(files ?? []);
-        context.processFiles(fileList);
+        context.processFiles(fileList, context.fileInputRef!);
       }}
       {...props}
     >
