@@ -14,7 +14,7 @@ export const FileUploadItemDeleteTrigger = (props: FileUploadItemDeleteTriggerPr
     if (context.disabled) {
       return;
     }
-    context.removeFile(file);
+    context.removeFile(file, context.fileInputRef!);
   };
 
   return (

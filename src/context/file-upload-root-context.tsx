@@ -17,10 +17,10 @@ export type FileUploadContextValue = {
   multiple?: boolean;
   accept?: Accept;
   allowDragAndDrop?: boolean;
-  processFiles: (files: File[]) => void;
+  processFiles: (files: File[], inputRef: HTMLInputElement) => void;
   acceptedFiles: File[];
   rejectedFiles: FileRejection[];
-  removeFile: (file: File) => void;
+  removeFile: (file: File, inputRef: HTMLInputElement) => void;
 };
 
 export const FileUploadContext = createContext<FileUploadContextValue>();
@@ -47,7 +47,15 @@ export const FileUploadProvider = (props: FileUploadContextProviderProps) => {
     props,
   );
 
-  const processFiles = (files: File[]) => {
+  const updateInputElFiles = (files: File[], inputFileRef: HTMLInputElement) => {
+    const list = new DataTransfer();
+    for (const file of files) {
+      list.items.add(file);
+    }
+    inputFileRef.files = list.files;
+  };
+
+  const processFiles = (files: File[], _fileInputRef: HTMLInputElement) => {
     const { acceptedFiles, rejectedFiles } = getFiles(
       files,
       mergedProps.accept,
@@ -75,6 +83,9 @@ export const FileUploadProvider = (props: FileUploadContextProviderProps) => {
     // trigger on file accept
     mergedProps.onFileAccept?.(acceptedFiles);
 
+    // console.log("first", fileInputRef ? fileInputRef!.files : null);
+    updateInputElFiles(acceptedFilesState, _fileInputRef);
+
     // trigger on file reject
     if (rejectedFiles.length > 0) {
       mergedProps.onFileReject?.(rejectedFiles);
@@ -84,8 +95,11 @@ export const FileUploadProvider = (props: FileUploadContextProviderProps) => {
     mergedProps.onFileChange?.({ acceptedFiles, rejectedFiles });
   };
 
-  const removeFile = (file: File) => {
+  const removeFile = (file: File, _fileInputRef: HTMLInputElement) => {
     setAcceptedFilesState(prevAcceptedFiles => prevAcceptedFiles.filter(f => f !== file));
+
+    updateInputElFiles(acceptedFilesState, _fileInputRef);
+
     // trigger on change
     mergedProps.onFileChange?.({
       acceptedFiles: acceptedFilesState.map(f => f),

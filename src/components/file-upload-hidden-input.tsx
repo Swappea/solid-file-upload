@@ -15,7 +15,7 @@ export const FileUploadHiddenInput = (props: FileUploadHiddenInputProps) => {
     }
 
     const { files } = event.currentTarget;
-    context.processFiles(Array.from(files ?? []));
+    context.processFiles(Array.from(files ?? []), context.fileInputRef!);
   };
 
   return (
