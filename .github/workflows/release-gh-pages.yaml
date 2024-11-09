@@ -18,6 +18,12 @@ jobs:
       with:
         node-version: '22'
 
+    # Step 2.1: Install pnpm
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+
     # Step 3: Install dependencies
     - name: Install dependencies
       run: pnpm install
