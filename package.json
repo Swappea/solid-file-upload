@@ -10,6 +10,9 @@
       "email": "swapneshsangle1@gmail.com"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Swappea/solid-file-upload.git"
