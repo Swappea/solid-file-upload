@@ -51,6 +51,7 @@
   "scripts": {
     "dev": "vite serve dev",
     "build": "tsup",
+    "build:dev": "cd dev && vite build",
     "test": "concurrently pnpm:test:*",
     "test:client": "vitest",
     "test:ssr": "pnpm run test:client --mode ssr",
