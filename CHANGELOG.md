@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.0.0 - 2024-11-10
+
 ## 0.0.1-beta.1 - 2024-11-09
 ### Added
 - Initial Release for SolidJS file upload
