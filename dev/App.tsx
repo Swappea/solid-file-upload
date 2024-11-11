@@ -49,7 +49,7 @@ const App = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="./github-mark.png"
+              src="./githubmark.png"
               alt="github repo for solid file upload"
               class="github-logo"
             />
@@ -105,7 +105,9 @@ const App = () => {
               onFileReject={data => console.log("data", data)}
               onFileChange={data => console.log("data", data)}
             >
-              <FileUploadLabel class={"fileUpload__label"}>File Upload</FileUploadLabel>
+              <FileUploadLabel class={"fileUpload__label"}>
+                <h5>File Upload</h5>
+              </FileUploadLabel>
               <FileUploadDropZone class={"fileUpload__dropzone"}>
                 Drop your files here...
                 <FileUploadTrigger class={"fileUpload__trigger"}>Choose files!</FileUploadTrigger>
