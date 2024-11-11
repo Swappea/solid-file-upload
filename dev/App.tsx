@@ -49,7 +49,7 @@ const App = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="./githubmark.png"
+              src="./github-mark.png"
               alt="github repo for solid file upload"
               class="github-logo"
             />
