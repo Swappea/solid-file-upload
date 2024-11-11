@@ -6,12 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.0.1 - 2024-11-11
 ### Changed
-
 - updated `README.MD` to provide more information and a link to documentation site.
 
 ## 1.0.0 - 2024-11-10
-
 ### Added
 - Initial Release for SolidJS file upload
 - Supports customization with multiple files, custom validation of files, upload file size limits, file size types limits, limit on uploading files

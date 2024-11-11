@@ -1,6 +1,6 @@
 {
   "name": "solid-file-upload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " SolidJS based File Upload UI Component which supports drag and drop, multiple files, max files validation and many more.",
   "license": "MIT",
   "author": "Swappea",
